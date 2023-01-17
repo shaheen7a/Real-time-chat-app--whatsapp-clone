@@ -6,13 +6,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #fafafa;
+  background-color: #202C33;
 }
 
 .sidebar-header {
   height: 50px;
   padding: 5px 0 5px 10px;
-  background-color: #ededed;
+  background-color: #202C33;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,6 +22,7 @@
 .sidebar-header-img {
   width: 42px;
   height: 42px;
+  border-radius: 100%;
 }
 
 .sidebar-header-img > img {
@@ -29,6 +30,7 @@
   height: 42px;
   cursor: pointer;
   border-radius: 100%;
+  border: 3px rgb(0, 92, 75) solid;
 }
 
 .sidebar-header-btn {
@@ -36,11 +38,12 @@
   align-items: center;
   justify-content: space-evenly;
   width: 150px;
-  color: #51585c;
+  color: #fff;
 }
 
 .sidebar-header-btn > .MuiSvgIcon-root {
   font-size: 23px;
+  cursor: pointer;
 }
 
 .sidebar-search {
@@ -48,7 +51,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f6f6f6;
+  background-color: #202C33;
+  
 }
 
 .sidebar-search-input {
@@ -56,9 +60,10 @@
   display: flex;
   align-items: center;
   height: 30px;
-  background-color: #fff;
+  background-color: #111B21;
   border: 1px solid lightgrey;
   border-radius: 10px;
+  border: none;
 }
 
 .sidebar-search-input > .MuiSvgIcon-root {
@@ -74,6 +79,7 @@
   margin-left: 6px;
   margin-bottom: 2px;
   width: 80%;
+  color: #fff;
 }
 
 .sidebar-chat-list {
@@ -81,4 +87,8 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+}
+
+.sidebar-chat-list::-webkit-scrollbar {
+  display: none;
 }

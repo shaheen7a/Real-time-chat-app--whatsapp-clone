@@ -7,7 +7,7 @@
 }
 
 .user-profile:hover {
-  background-color: lightgrey;
+  background-color: #111B21;
 }
 
 .user-image {
@@ -17,16 +17,19 @@
 .user-image > img {
   width: 100%;
   border-radius: 100%;
+  border: 3px rgb(0, 92, 75) solid; 
 }
 
 .user-info {
   flex: 1;
   text-align: left;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .user-name {
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 16px;
+  color: silver;
+  letter-spacing: 1px;
 }
 
 .user-lastmessage {

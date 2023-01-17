@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import "./ChatContainer.css"
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoodIcon from '@mui/icons-material/Mood';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
 import SendIcon from '@mui/icons-material/Send';
-import user from "../../assets/user.png"
 import ChatMessage from '../ChatMessage/ChatMessage';
 import EmojiPicker from 'emoji-picker-react';
+import { Theme } from 'emoji-picker-react';
 import { useParams } from "react-router-dom";
 import db from '../../firebase';
 import firebase from 'firebase/compat/app';
@@ -113,7 +112,7 @@ const ChatContainer = ({ currentUser }) => {
           <div className="chat-user-img">
             <img src={chatUser?.photoURL} alt="" />
           </div>
-          <p>{chatUser?.fullname}</p>
+          <p className='chat-user-name'>{chatUser?.fullname}</p>
         </div>
 
         <div className='chat-container-header-btn'>
@@ -122,32 +121,34 @@ const ChatContainer = ({ currentUser }) => {
       </div>
 
       <div className='chat-display-container' ref={chatBox}>
-{
-  chatMessages.map((message) => (
-    <ChatMessage 
-    message={message.text} 
-    time={message.timeStamp}
-    sender={message.senderEmail}
-    key={message.timeStamp}
-    />
-  ))
-}
+        {
+          chatMessages.map((message) => (
+            <ChatMessage
+              message={message.text}
+              time={message.timeStamp}
+              sender={message.senderEmail}
+              key={message.timeStamp}
+            />
+          ))
+        }
       </div>
 
 
       {openEmojiBox &&
-          (
-            <EmojiPicker
-              onEmojiClick={(emojiData, event) =>
-                setMessage(message + emojiData.emoji)} />
-          )
-        }
+        (
+          <EmojiPicker
+            height={400} width={"100%"}
+            theme="dark"
+            emojiStyle="google"
+            onEmojiClick={(emojiData, event) =>
+              setMessage(message + emojiData.emoji)} />
+        )
+      }
 
 
-      <div className='chat-input'>    
+      <div className='chat-input'>
         <div className='chat-input-btn'>
           <MoodIcon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
-          <AttachFileIcon />
         </div>
 
         <form onSubmit={send}>
@@ -159,9 +160,9 @@ const ChatContainer = ({ currentUser }) => {
           />
         </form>
 
-        <div 
-        onClick={send}
-        className='chat-input-send-btn'>
+        <div
+          onClick={send}
+          className='chat-input-send-btn'>
           <SendIcon />
         </div>
       </div>

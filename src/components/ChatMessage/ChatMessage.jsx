@@ -11,7 +11,7 @@ const ChatMessage = ({ message, time, sender }) => {
           sender === auth?.currentUser?.email ? "flex-end" : "flex-start",
 
         backgroundColor:
-          sender === auth?.currentUser?.email ? "#dcf8c6" : "#fff",
+          sender === auth?.currentUser?.email ? "#005C4B" : "#202C33",
       }}
     >
       <div className="chat-message-text">

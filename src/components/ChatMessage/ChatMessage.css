@@ -6,9 +6,11 @@
   width: fit-content;
   max-width: 400px;
   padding: 10px;
-  background-color: #dcf8c6;
+  background-color: #005C4B;
   border-radius: 10px;
   height: fit-content;
+  color: #fff;
+  font-size: 12px;
 }
 
 .chat-message-text {
@@ -18,10 +20,11 @@
 }
 
 .chat-message-date {
-  font-size: 11px;
-  color: gray;
+  font-size: 12px;
+  color: silver;
   font-weight: normal;
   align-self: flex-end;
+  letter-spacing: 1px;
 }
 
 .emoji-picker-react {
